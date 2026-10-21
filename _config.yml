@@ -237,6 +237,9 @@ exclude:
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - requirements.txt
+  - test/
+  - .agents/
   - gems/
   - migrations/
   - vendor
