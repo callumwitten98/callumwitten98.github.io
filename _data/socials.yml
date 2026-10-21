@@ -1,14 +1,14 @@
-# this file contains the social media links and usernames of the author
-# the socials will be displayed in the order they are defined here
-# for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
-cv_pdf: /assets/pdf/example_pdf.pdf # path to your CV PDF file
-email: you@example.com # your email address
-inspirehep_id: 1010907 # Inspire HEP author ID
-rss_icon: true # comment this line to hide the RSS icon
-scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
-# wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
-# whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-custom_social: # can be any name here other than the ones already defined in the jekyll-socials plugin
-  logo: https://www.alberteinstein.com/wp-content/uploads/2024/03/cropped-favicon-192x192.png # can be png, svg, jpg
-  title: Custom Social
-  url: https://www.alberteinstein.com/
+# Your contact and profile links, shown as icons at the bottom of the home page.
+# They appear in the order listed. For the full list of supported sites, see
+# https://github.com/george-gca/jekyll-socials
+email: cw795@cam.ac.uk
+orcid_id: 0000-0002-1369-6452
+scix:
+  logo: ai ai-ads
+  title: Publications on SciX
+  url: https://ui.adsabs.harvard.edu/search/q=author%3A%22Witten%2C%20Callum%22%20year%3A2021-&sort=date%20desc
+cv_pdf: /cv/
+# scholar_userid: # your Google Scholar ID
+# github_username: # your GitHub username
+# linkedin_username: # your LinkedIn username
+# bluesky_url: # your Bluesky profile URL

@@ -1,0 +1,50 @@
+name: Update publications
+
+# Refreshes the publication list, citation count and h-index from your SciX
+# library once a day, then republishes the site if anything changed.
+# To run it straight away: Actions tab -> Update publications -> Run workflow.
+
+on:
+  schedule:
+    - cron: "23 4 * * *" # every day at 04:23 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "bin/update_publications.py"
+      - ".github/workflows/update-publications.yml"
+
+permissions:
+  contents: write # save the updated list
+  actions: write # start the "Deploy site" workflow
+
+concurrency:
+  group: update-publications
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Fetch publications and h-index from SciX
+        env:
+          ADS_TOKEN: ${{ secrets.ADS_TOKEN }}
+        run: python3 bin/update_publications.py
+
+      - name: Save changes and republish the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add _includes/publications_generated.html _data/publications.json
+          if git diff --cached --quiet; then
+            echo "No changes since the last update."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update publications from SciX"
+          git pull --rebase origin main
+          git push
+          gh workflow run deploy.yml --ref main

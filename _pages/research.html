@@ -1,0 +1,36 @@
+---
+layout: page
+title: research
+permalink: /research
+description: Research and publications of Callum Witten, including papers on early galaxies, protoclusters and reionisation, with citation metrics updated daily from SciX.
+nav: true
+nav_order: 1
+_styles: >
+  .pub-intro { margin-bottom: 1.5rem; }
+  .pub-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 0 0 0.5rem; }
+  .pub-stat { border: 1px solid var(--global-divider-color); border-radius: 0.75rem; background: var(--global-card-bg-color); padding: 0.75rem 0.9rem; }
+  .pub-stat-label { margin: 0 0 0.2rem; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--global-text-color-light); }
+  .pub-stat-value { margin: 0; font-size: 1.6rem; font-weight: 700; line-height: 1.1; color: var(--global-theme-color); }
+  .pub-updated { font-size: 0.85rem; color: var(--global-text-color-light); margin: 0 0 2rem; }
+  .pub-section { margin-top: 2rem; font-size: 1.35rem; }
+  .pub-count { font-size: 0.9rem; font-weight: 400; color: var(--global-text-color-light); }
+  .pub-list { list-style: none; padding-left: 0; }
+  .pub-list li { margin-bottom: 0.9rem; line-height: 1.55; }
+  .pub-year { font-weight: 700; margin-right: 0.25rem; }
+  .pub-title { font-weight: 600; }
+  .pub-authors { color: var(--global-text-color-light); }
+  .pub-venue { font-style: italic; }
+  @media (max-width: 576px) { .pub-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+---
+
+<p class="pub-intro">
+  I study galaxies in the first few hundred million years after the Big Bang, using JWST, the VLT and cosmological simulations. Much of my recent
+  work asks how a galaxy's environment, from mergers to dense protoclusters, shaped its growth and its contribution to reionisation.
+</p>
+
+{% include publications_generated.html %}
+
+<p class="pub-updated">
+  Updated daily from my <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Witten%2C%20Callum%22%20year%3A2021-&sort=date%20desc">SciX</a>
+  library. Also on <a href="https://orcid.org/0000-0002-1369-6452">ORCID</a>.
+</p>
