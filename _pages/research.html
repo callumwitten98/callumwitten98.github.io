@@ -2,7 +2,7 @@
 layout: page
 title: research
 permalink: /research
-description: Callum Witten's research on the first galaxies, protoclusters and reionisation with JWST, the VLT and simulations.
+description: Highlights from my research on the first galaxies, protoclusters and reionisation.
 nav: true
 nav_order: 1
 _styles: >
@@ -10,7 +10,7 @@ _styles: >
   .paper-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; margin: 1.5rem 0 1rem; }
   .paper-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--global-divider-color); border-radius: 1rem; background: var(--global-card-bg-color); color: var(--global-text-color) !important; text-decoration: none !important; box-shadow: 0 16px 34px -28px rgba(0, 0, 0, 0.55); transition: border-color 0.25s ease, transform 0.25s ease; }
   .paper-card:hover, .paper-card:focus-visible { border-color: var(--global-theme-color); transform: translateY(-2px); }
-  .paper-card img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #000; }
+  .paper-card img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; background: #000; }
   .paper-card-body { padding: 0.85rem 1rem 1rem; }
   .paper-card-title { margin: 0 0 0.45rem; font-size: 0.98rem; font-weight: 600; line-height: 1.4; }
   .paper-card:hover .paper-card-title, .paper-card:focus-visible .paper-card-title { color: var(--global-theme-color); }
@@ -33,7 +33,14 @@ _styles: >
 
 <div class="paper-grid">
   {% for item in site.data.research %}
-    {% assign paper = all_papers | where: 'arxiv_id', item.arxiv | first %}
+    {% comment %} Look the paper up by arXiv ID. A plain loop, because Jekyll's `where` filter turns IDs like 2605.28930 into numbers and drops the trailing zero. {% endcomment %}
+    {% assign paper = nil %}
+    {% for candidate in all_papers %}
+      {% if candidate.arxiv_id == item.arxiv %}
+        {% assign paper = candidate %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
     {% if paper %}
       {% assign link = paper.ads_url %}
     {% else %}
