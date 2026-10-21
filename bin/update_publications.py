@@ -116,7 +116,7 @@ def display_name(author):
     if is_me(author):
         return "<strong>%s</strong>" % html.escape(MY_DISPLAY_NAME)
     given, last = split_name(html.unescape(author))
-    return html.escape(("%s %s" % (given, last)).strip())
+    return html.escape(("%s %s" % (given, last)).strip(), quote=False)
 
 
 def format_authors(authors):
@@ -141,7 +141,7 @@ SUBMITTED = re.compile(r"\b((?:submitted|accepted(?: for publication)?)\s+(?:to|
 def format_venue(paper):
     pub = (paper.get("pub") or "").strip()
     if not pub or "arxiv" in pub.lower():
-        notes = " ".join((paper.get("pubnote") or []) + (paper.get("comment") or []))
+        notes = html.unescape(" ".join((paper.get("pubnote") or []) + (paper.get("comment") or [])))
         match = SUBMITTED.search(notes)
         if match:
             phrase = " ".join(match.group(1).split())
