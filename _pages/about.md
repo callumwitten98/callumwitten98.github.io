@@ -23,7 +23,7 @@ I'm PI of [JWST programme 4043](https://www.stsci.edu/jwst/science-execution/pro
 
 Before returning to Cambridge in 2026, I was a postdoctoral researcher at the University of Geneva in Pascal Oesch's [Galaxy Build-up at Cosmic Dawn](https://www.unige.ch/sciences/astro/cosmicdawn/) group. I did my PhD at the Institute of Astronomy in Cambridge (2021–2024), supervised by [Debora Sijacki](https://www.ast.cam.ac.uk/people/debora.sijacki) and [Nicolas Laporte](https://www.nicolas-laporte.com/), with a thesis on primeval galaxies in the era of JWST, and was awarded the 2025 Murdin Prize for the best publication by a PhD student. Before that, I studied for an MPhys in Physics with Astrophysics at the University of Bath.
 
-See my [research and publications](/research) or my [CV](/cv/).
+See my [research](/research), [publications](/publications/) or [CV](/cv/).
 
 ## In the news
 

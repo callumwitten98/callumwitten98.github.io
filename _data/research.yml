@@ -1,0 +1,43 @@
+# Papers shown as image cards on the research page, in this order.
+#
+#   title:  shown on the card
+#   arxiv:  the arXiv ID, in quotes. The card links to the paper on ADS, and its
+#           year and journal are filled in automatically from SciX.
+#   image:  a file in assets/img/research/ (square images look best)
+#   alt:    a short description of the image, for screen readers and Google
+#   blurb:  optional one or two sentences shown under the title
+
+- title: "Too many protoclusters? Reconciling the overabundance of cluster progenitors within the first billion years of the Universe"
+  arxiv: "2605.28930"
+  image: too-many-protoclusters.jpg
+  alt: Number density of protocluster progenitors as a function of halo mass
+
+- title: "Not all protoclusters host evolved galaxies: Evidence for reduced environmental effects in a lower halo mass protocluster at z=7.66"
+  arxiv: "2511.05647"
+  image: not-all-protoclusters.jpg
+  alt: A galaxy protocluster core in the early Universe at high redshift in SMACS 0723
+
+- title: "Before its time: a remarkably evolved protocluster core at z=7.88"
+  arxiv: "2507.06284"
+  image: before-its-time.jpg
+  alt: A galaxy protocluster core in the early Universe at high redshift in Abell 2744
+
+- title: "Rising from the ashes: evidence of old stellar populations and rejuvenation events in the very early Universe"
+  arxiv: "2407.07937"
+  image: rising-from-the-ashes.jpg
+  alt: The core of a high redshift protocluster environment
+
+- title: "Deciphering Lyman-α emission deep into the epoch of reionization"
+  arxiv: "2303.16225"
+  image: deciphering-lyman-alpha.jpg
+  alt: Galaxy merger in the early Universe from simulations
+
+- title: "GN-z11: The environment of an active galactic nucleus at z = 10.603. New insights into the most distant Lyα detection"
+  arxiv: "2306.09142"
+  image: gn-z11-environment.jpg
+  alt: An artist impression of the high redshift galaxy GN-z11
+
+- title: "Evidence for a Low Lyman Continuum Escape Fraction in Three Massive, Ultraviolet-bright Galaxies at z > 7"
+  arxiv: "2301.03599"
+  image: low-lyc-escape-fraction.jpg
+  alt: NIRCam images of a galaxy merger in the early Universe

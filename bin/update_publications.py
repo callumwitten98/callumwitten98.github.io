@@ -25,6 +25,13 @@ MY_LAST_NAME = "Witten"
 MY_FIRST_INITIAL = "C"
 MY_DISPLAY_NAME = "Callum Witten"
 
+# Papers where you are joint first author but not listed first. They are counted
+# and listed as first-author papers, with a "joint first author" note.
+# Use the arXiv ID (it stays the same after the paper is published).
+JOINT_FIRST_AUTHOR = {
+    "2306.09142",  # Scholtz, Witten et al. 2024, GN-z11: the environment of an AGN at z = 10.603
+}
+
 API = os.environ.get("ADS_API_URL", "https://api.adsabs.harvard.edu/v1")
 
 JOURNAL_ABBREVIATIONS = {
@@ -192,8 +199,16 @@ def render_list(title, entries):
             links = ' <a href="%s">arXiv:%s</a>' % (e["arxiv_url"], e["arxiv_id"])
         items.append(
             '  <li><span class="pub-year">%s</span> <a class="pub-title" href="%s">%s</a>.'
-            ' <span class="pub-authors">%s</span>, <span class="pub-venue">%s</span>.%s</li>'
-            % (e["year"], e["ads_url"], e["title"], e["authors"], e["venue"], links)
+            ' <span class="pub-authors">%s</span>, <span class="pub-venue">%s</span>%s.%s</li>'
+            % (
+                e["year"],
+                e["ads_url"],
+                e["title"],
+                e["authors"],
+                e["venue"],
+                ' <span class="pub-note">(joint first author)</span>' if e.get("joint_first") else "",
+                links,
+            )
         )
     return '<h2 class="pub-section">%s <span class="pub-count">%d</span></h2>\n<ul class="pub-list">\n%s\n</ul>\n' % (
         title,
@@ -232,8 +247,12 @@ def main():
     for paper in papers:
         authors = paper.get("author") or []
         position = next((i for i, a in enumerate(authors) if is_me(a)), None)
+        entry = build_entry(paper)
+        if position != 0 and (entry["arxiv_id"] in JOINT_FIRST_AUTHOR or entry["bibcode"] in JOINT_FIRST_AUTHOR):
+            entry["joint_first"] = True
+            position = 0
         key = "first_author" if position == 0 else "second_author" if position == 1 else "co_authored"
-        groups[key].append(build_entry(paper))
+        groups[key].append(entry)
 
     metrics = fetch_metrics([p["bibcode"] for p in papers])
     stats = {

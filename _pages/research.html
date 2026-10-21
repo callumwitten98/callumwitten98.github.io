@@ -2,36 +2,55 @@
 layout: page
 title: research
 permalink: /research
-description: Publications, citations and h-index, updated daily from SciX.
+description: Callum Witten's research on the first galaxies, protoclusters and reionisation with JWST, the VLT and simulations.
 nav: true
 nav_order: 1
 _styles: >
-  .pub-intro { margin-bottom: 1.5rem; }
-  .pub-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 0 0 0.5rem; }
-  .pub-stat { border: 1px solid var(--global-divider-color); border-radius: 0.75rem; background: var(--global-card-bg-color); padding: 0.75rem 0.9rem; }
-  .pub-stat-label { margin: 0 0 0.2rem; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--global-text-color-light); }
-  .pub-stat-value { margin: 0; font-size: 1.6rem; font-weight: 700; line-height: 1.1; color: var(--global-theme-color); }
-  .pub-updated { font-size: 0.85rem; color: var(--global-text-color-light); margin: 0 0 2rem; }
-  .pub-section { margin-top: 2rem; font-size: 1.35rem; }
-  .pub-count { font-size: 0.9rem; font-weight: 400; color: var(--global-text-color-light); }
-  .pub-list { list-style: none; padding-left: 0; }
-  .pub-list li { margin-bottom: 0.9rem; line-height: 1.55; }
-  .pub-year { font-weight: 700; margin-right: 0.25rem; }
-  .pub-title { font-weight: 500; }
-  .pub-authors { color: var(--global-text-color-light); }
-  .pub-venue { font-style: italic; }
-  @media (max-width: 576px) { .pub-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .research-intro { margin-bottom: 0.5rem; }
+  .paper-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; margin: 1.5rem 0 1rem; }
+  .paper-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--global-divider-color); border-radius: 1rem; background: var(--global-card-bg-color); color: var(--global-text-color) !important; text-decoration: none !important; box-shadow: 0 16px 34px -28px rgba(0, 0, 0, 0.55); transition: border-color 0.25s ease, transform 0.25s ease; }
+  .paper-card:hover, .paper-card:focus-visible { border-color: var(--global-theme-color); transform: translateY(-2px); }
+  .paper-card img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #000; }
+  .paper-card-body { padding: 0.85rem 1rem 1rem; }
+  .paper-card-title { margin: 0 0 0.45rem; font-size: 0.98rem; font-weight: 600; line-height: 1.4; }
+  .paper-card:hover .paper-card-title, .paper-card:focus-visible .paper-card-title { color: var(--global-theme-color); }
+  .paper-card-blurb { margin: 0 0 0.45rem; font-size: 0.9rem; line-height: 1.5; }
+  .paper-card-meta { margin: 0; font-size: 0.8rem; color: var(--global-text-color-light); }
+  @media (hover: hover) { .paper-card img { filter: grayscale(100%) brightness(0.92); transition: filter 0.28s ease; } .paper-card:hover img, .paper-card:focus-visible img { filter: none; } }
 ---
 
-<p class="pub-intro">
+<p class="research-intro">
   I study galaxies in the first few hundred million years after the Big Bang, using JWST, the VLT and cosmological simulations. Much of my recent
   work asks how a galaxy's environment, from mergers to dense protoclusters, shaped its growth and its contribution to reionisation.
 </p>
-
-{% include publications_generated.html %}
-
-<p class="pub-updated">
-  Updated daily from my SciX library. See also my
-  <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Witten%2C%20Callum%22%20year%3A2021-&sort=date%20desc">ADS</a> and
-  <a href="https://orcid.org/0000-0002-1369-6452">ORCID</a> profiles.
+<p>
+  A few highlights are below. For every paper, with citations and h-index, see my <a href="{{ '/publications/' | relative_url }}">publications</a>
+  or my <a href="{{ '/cv/' | relative_url }}">CV</a>.
 </p>
+
+{% assign pubs = site.data.publications %}
+{% assign all_papers = pubs.first_author | concat: pubs.second_author | concat: pubs.co_authored %}
+
+<div class="paper-grid">
+  {% for item in site.data.research %}
+    {% assign paper = all_papers | where: 'arxiv_id', item.arxiv | first %}
+    {% if paper %}
+      {% assign link = paper.ads_url %}
+    {% else %}
+      {% assign link = 'https://arxiv.org/abs/' | append: item.arxiv %}
+    {% endif %}
+    {% assign image_path = '/assets/img/research/' | append: item.image %}
+    <a class="paper-card" href="{{ link }}">
+      <img src="{{ image_path | relative_url }}" alt="{{ item.alt | escape }}" loading="lazy" width="500" height="500">
+      <div class="paper-card-body">
+        <h2 class="paper-card-title">{{ item.title | escape }}</h2>
+        {% if item.blurb %}
+          <p class="paper-card-blurb">{{ item.blurb }}</p>
+        {% endif %}
+        {% if paper %}
+          <p class="paper-card-meta">{{ paper.year }} · {{ paper.venue }}</p>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
