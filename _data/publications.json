@@ -1,7 +1,7 @@
 {
   "stats": {
     "papers": 36,
-    "first_author": 7,
+    "first_author": 8,
     "citations": 1930,
     "h_index": 21
   },
@@ -52,6 +52,18 @@
     },
     {
       "year": "2024",
+      "title": "GN-z11: The environment of an active galactic nucleus at z = 10.603. New insights into the most distant Lyα detection",
+      "authors": "Jan Scholtz, <strong>Callum Witten</strong>, Nicolas Laporte &amp; others",
+      "venue": "A&amp;A 687, A283",
+      "bibcode": "2024A&A...687A.283S",
+      "ads_url": "https://ui.adsabs.harvard.edu/abs/2024A%26A...687A.283S/abstract",
+      "arxiv_id": "2306.09142",
+      "arxiv_url": "https://arxiv.org/abs/2306.09142",
+      "citations": 74,
+      "joint_first": true
+    },
+    {
+      "year": "2024",
       "title": "Deciphering Lyman-α emission deep into the epoch of reionization",
       "authors": "<strong>Callum Witten</strong>, Nicolas Laporte, Sergio Martin-Alvarez &amp; others",
       "venue": "Nature Astronomy 8, 384",
@@ -84,19 +96,7 @@
       "citations": 23
     }
   ],
-  "second_author": [
-    {
-      "year": "2024",
-      "title": "GN-z11: The environment of an active galactic nucleus at z = 10.603. New insights into the most distant Lyα detection",
-      "authors": "Jan Scholtz, <strong>Callum Witten</strong>, Nicolas Laporte &amp; others",
-      "venue": "A&amp;A 687, A283",
-      "bibcode": "2024A&A...687A.283S",
-      "ads_url": "https://ui.adsabs.harvard.edu/abs/2024A%26A...687A.283S/abstract",
-      "arxiv_id": "2306.09142",
-      "arxiv_url": "https://arxiv.org/abs/2306.09142",
-      "citations": 74
-    }
-  ],
+  "second_author": [],
   "co_authored": [
     {
       "year": "2026",
