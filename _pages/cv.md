@@ -12,9 +12,9 @@ _styles: >
   .cv-frame { width: 100%; height: 80vh; min-height: 500px; border: 1px solid var(--global-divider-color); border-radius: 0.5rem; }
 ---
 
-<p><a class="cv-download" href="{% if page.cv_file contains '://' %}{{ page.cv_file }}{% else %}{{ page.cv_file | relative_url }}{% endif %}">Download my CV (PDF)</a></p>
+<p><a class="cv-download" href="{% if page.cv_file contains '://' %}{{ page.cv_file }}{% else %}{{ page.cv_file | relative_url | bust_file_cache }}{% endif %}">Download my CV (PDF)</a></p>
 
 {% assign first_char = page.cv_file | slice: 0 %}
 {% if first_char == '/' %}
-  <iframe class="cv-frame" src="{{ page.cv_file | relative_url }}" title="Callum Witten CV"></iframe>
+  <iframe class="cv-frame" src="{{ page.cv_file | relative_url | bust_file_cache }}" title="Callum Witten CV"></iframe>
 {% endif %}
