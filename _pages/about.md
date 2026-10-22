@@ -8,7 +8,7 @@ subtitle: Postdoctoral Researcher · Kavli Institute for Cosmology, University o
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # set to true for a round photo
+  image_circular: true # crops the photo to a circle
 
 selected_papers: false # the full list lives on the research page
 social: true # includes social icons at the bottom of the page
@@ -19,6 +19,12 @@ announcements:
 latest_posts:
   enabled: false
 ---
+
+<style>
+  /* Small round headshot on the right, also on phones */
+  .profile { width: 170px !important; margin: 0 0 0.75rem 1.5rem; }
+  @media (max-width: 575.98px) { .profile { width: 110px !important; float: right !important; margin: 0 0 0.5rem 1rem; } }
+</style>
 
 I'm a postdoctoral researcher at the [Kavli Institute for Cosmology](https://www.kicc.cam.ac.uk), University of Cambridge, working with the groups of Roberto Maiolino and Sandro Tacchella. I study galaxies in the first billion years of the Universe, combining observations from the James Webb Space Telescope and ESO's Very Large Telescope with large-scale cosmological simulations.
 
