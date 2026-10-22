@@ -32,7 +32,7 @@ latest_posts:
   body { background: transparent !important; }
   .about-background {
     position: fixed; inset: 0; z-index: -1; pointer-events: none;
-    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url("/assets/img/about-background.jpg") center / cover no-repeat;
+    background: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.6)), url("/assets/img/about-background.jpg") center / cover no-repeat;
   }
 </style>
 
