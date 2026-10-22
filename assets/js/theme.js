@@ -292,7 +292,12 @@ let initTheme = () => {
 
   setThemeSetting(themeSetting);
 
-  // ALWAYS DARK: remove the theme toggle button from the navbar.
+  // ALWAYS DARK: hide the theme toggle straight away (no flash while the page loads)...
+  let hideToggle = document.createElement("style");
+  hideToggle.textContent = "#light-toggle, .toggle-container { display: none !important; }";
+  document.head.appendChild(hideToggle);
+
+  // ...and remove it from the navbar once the page has loaded.
   document.addEventListener("DOMContentLoaded", function () {
     const mode_toggle = document.getElementById("light-toggle");
     if (mode_toggle) {
