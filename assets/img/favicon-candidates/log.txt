@@ -1,0 +1,3 @@
+assets/img/favicon-candidates/google-s2-256.jpg <- https://www.google.com/s2/favicons?domain=www.callumwitten.com&sz=256 (image/jpeg, 1786 bytes)
+assets/img/favicon-candidates/gstatic-256.jpg <- https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.callumwitten.com&size=256 (image/jpeg, 2389 bytes)
+archive snapshots: []
