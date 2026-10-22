@@ -38,7 +38,7 @@ latest_posts:
 
 <div class="about-background" aria-hidden="true"></div>
 
-I'm a postdoctoral researcher at the [Kavli Institute for Cosmology](https://www.kicc.cam.ac.uk), University of Cambridge, working with the groups of Roberto Maiolino and Sandro Tacchella. I study galaxies in the first billion years of the Universe, combining observations from the James Webb Space Telescope and ESO's Very Large Telescope with large-scale cosmological simulations.
+I'm a postdoctoral researcher at the [Kavli Institute for Cosmology](https://www.kicc.cam.ac.uk), University of Cambridge, working with the [Extragalactic Astrophysics Group](https://exgal.phy.cam.ac.uk) of Roberto Maiolino and Sandro Tacchella. I study galaxies in the first billion years of the Universe, combining observations from the James Webb Space Telescope and ESO's Very Large Telescope with large-scale cosmological simulations.
 
 My research studies how the first galaxies and black holes formed and grew, and how their surroundings shaped them, from galaxy mergers to the densest overdensities that will go on to become today's galaxy clusters. 
 
