@@ -56,5 +56,3 @@ See my [research](/research), [publications](/publications/) or [CV](/cv/).
 - **2024:** ESA press release on my _Nature Astronomy_ paper: [Webb galaxy mergers solve early Universe mystery](https://www.esa.int/Science_Exploration/Space_Science/Webb/Webb_galaxy_mergers_solve_early_Universe_mystery).
 -  **2024:** _New Scientist_: [Galaxy smash-ups may explain strange light from early universe](https://www.newscientist.com/article/2414456-galaxy-smash-ups-may-explain-strange-light-from-early-universe/).
 - **2024:** Nature Research Briefing on my _Nature Astronomy_ paper: [Galaxy mergers can explain the unexpected hydrogen emission in the early Universe](https://www.nature.com/articles/s41550-023-02180-w).
-
-<p class="about-background-credit">Background: JWST's first deep field, SMACS 0723. Image: NASA, ESA, CSA, STScI.</p>
