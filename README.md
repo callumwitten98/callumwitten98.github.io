@@ -11,7 +11,7 @@ Every change you commit to the `main` branch rebuilds and republishes the site a
 | Home page text and "In the news"  | `_pages/about.md`                                          |
 | Research page text                | `_pages/research.html`                                     |
 | Research page paper cards         | `_data/research.yml` (images in `assets/img/research/`)    |
-| CV                                | upload a new `assets/pdf/cv.pdf` (or edit `_pages/cv.md`)  |
+| CV                                | upload a new `assets/pdf/Callum_Witten_CV.pdf`             |
 | Contact and profile icons         | `_data/socials.yml`                                        |
 | Profile photo                     | replace `assets/img/prof_pic.jpg`                          |
 | Site name, description, keywords  | `_config.yml`                                              |
