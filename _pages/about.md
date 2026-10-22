@@ -34,7 +34,7 @@ latest_posts:
     position: fixed; inset: 0; z-index: -1; pointer-events: none;
     background: linear-gradient(rgba(18, 18, 18, 0.72), rgba(18, 18, 18, 0.78)), url("/assets/img/about-background.jpg") center / cover no-repeat;
   }
-  .about-background-credit { margin-top: 1rem; text-align: center; font-size: 0.75rem; opacity: 0.6; }
+  .about-background-credit { margin-top: 1rem; text-align: center; font-size: 0.75rem; opacity: 0.8; }
 </style>
 
 <div class="about-background" aria-hidden="true"></div>
