@@ -6,8 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Callum
 middle_name:
 last_name: Witten
-contact_note: >
-  Email is the best way to reach me.
+contact_note: # optional line shown under the contact icons on the home page
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Callum Witten is an astrophysicist at the University of Cambridge studying the first galaxies and black holes with JWST.
 footer_text: >
