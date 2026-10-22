@@ -1,6 +1,6 @@
 ---
 layout: page
-title: cv
+title: CV
 permalink: /cv/
 description: Curriculum vitae of Callum Witten.
 nav: true

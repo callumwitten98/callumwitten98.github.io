@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 description: Callum Witten is a postdoctoral researcher in astrophysics at the University of Cambridge, studying the first galaxies and black holes with the largest telescopes and simulations.
 subtitle: Postdoctoral Researcher · Kavli Institute for Cosmology, University of Cambridge

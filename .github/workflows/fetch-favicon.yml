@@ -1,0 +1,76 @@
+name: Find the old Wix favicon
+
+# One-off: collects candidate copies of the galaxy favicon the Wix site used
+# (from Google's favicon cache and the Internet Archive) into
+# assets/img/favicon-candidates/ so the best one can be chosen. Safe to delete.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/fetch-favicon.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Collect favicon candidates
+        run: |
+          python3 - <<'PY'
+          import json, os, re, urllib.request
+          out = "assets/img/favicon-candidates"
+          os.makedirs(out, exist_ok=True)
+          log = []
+          def get(url):
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  return r.read(), r.headers.get("Content-Type", "")
+          def save(name, url):
+              try:
+                  data, ctype = get(url)
+                  ext = "png" if "png" in ctype else "ico" if "icon" in ctype else "jpg" if "jpeg" in ctype else "webp" if "webp" in ctype else "bin"
+                  path = "%s/%s.%s" % (out, name, ext)
+                  open(path, "wb").write(data)
+                  log.append("%s <- %s (%s, %d bytes)" % (path, url, ctype, len(data)))
+              except Exception as e:
+                  log.append("FAILED %s <- %s: %s" % (name, url, e))
+          save("google-s2-256", "https://www.google.com/s2/favicons?domain=www.callumwitten.com&sz=256")
+          save("gstatic-256", "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.callumwitten.com&size=256")
+          # Internet Archive copies of the Wix home page: find the icon links, then fetch the original images.
+          try:
+              cdx, _ = get("https://web.archive.org/cdx/search/cdx?url=www.callumwitten.com/&output=json&filter=statuscode:200&limit=-5")
+              rows = json.loads(cdx)[1:]
+              log.append("archive snapshots: %s" % [r[1] for r in rows])
+              seen = set()
+              for row in reversed(rows):
+                  html, _ = get("https://web.archive.org/web/%sid_/https://www.callumwitten.com/" % row[1])
+                  html = html.decode("utf-8", "replace")
+                  for tag in re.findall(r"<link[^>]+rel=\"[^\"]*(?:icon)[^\"]*\"[^>]*>", html, re.I):
+                      m = re.search(r"href=\"([^\"]+)\"", tag)
+                      if not m:
+                          continue
+                      href = m.group(1).replace("&amp;", "&")
+                      log.append("icon tag in %s: %s" % (row[1], tag))
+                      media = re.search(r"static\.wixstatic\.com/media/([^/\"?]+)", href)
+                      if media and media.group(1) not in seen:
+                          seen.add(media.group(1))
+                          save("wix-original-%d" % len(seen), "https://static.wixstatic.com/media/" + media.group(1))
+                  if seen:
+                      break
+          except Exception as e:
+              log.append("archive lookup failed: %s" % e)
+          open(out + "/log.txt", "w").write("\n".join(log) + "\n")
+          print("\n".join(log))
+          PY
+      - name: Save candidates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/img/favicon-candidates
+          git commit -m "Collect favicon candidates from the old Wix site"
+          git pull --rebase origin main
+          git push
