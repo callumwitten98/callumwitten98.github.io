@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://callumwitten98.github.io/sitemap.xml
+Sitemap: https://www.callumwitten.com/sitemap.xml
