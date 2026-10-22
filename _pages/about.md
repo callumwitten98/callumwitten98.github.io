@@ -32,9 +32,8 @@ latest_posts:
   body { background: transparent !important; }
   .about-background {
     position: fixed; inset: 0; z-index: -1; pointer-events: none;
-    background: linear-gradient(rgba(18, 18, 18, 0.72), rgba(18, 18, 18, 0.78)), url("/assets/img/about-background.jpg") center / cover no-repeat;
+    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url("/assets/img/about-background.jpg") center / cover no-repeat;
   }
-  .about-background-credit { margin-top: 1rem; text-align: center; font-size: 0.75rem; opacity: 0.8; }
 </style>
 
 <div class="about-background" aria-hidden="true"></div>
