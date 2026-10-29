@@ -2,7 +2,7 @@
   "stats": {
     "papers": 36,
     "first_author": 8,
-    "citations": 2262,
+    "citations": 2266,
     "h_index": 23
   },
   "first_author": [
@@ -59,7 +59,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2024A%26A...687A.283S/abstract",
       "arxiv_id": "2306.09142",
       "arxiv_url": "https://arxiv.org/abs/2306.09142",
-      "citations": 83,
+      "citations": 84,
       "joint_first": true
     },
     {
@@ -261,7 +261,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026OJAp....956033N/abstract",
       "arxiv_id": "2505.11263",
       "arxiv_url": "https://arxiv.org/abs/2505.11263",
-      "citations": 236
+      "citations": 237
     },
     {
       "year": "2026",
@@ -327,7 +327,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2024MNRAS.534..523C/abstract",
       "arxiv_id": "2311.02051",
       "arxiv_url": "https://arxiv.org/abs/2311.02051",
-      "citations": 202
+      "citations": 203
     },
     {
       "year": "2024",
@@ -349,7 +349,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2024MNRAS.527.6139S/abstract",
       "arxiv_id": "2310.01112",
       "arxiv_url": "https://arxiv.org/abs/2310.01112",
-      "citations": 149
+      "citations": 150
     },
     {
       "year": "2024",
