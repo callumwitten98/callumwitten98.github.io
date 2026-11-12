@@ -2,7 +2,7 @@
   "stats": {
     "papers": 36,
     "first_author": 8,
-    "citations": 2264,
+    "citations": 2258,
     "h_index": 23
   },
   "first_author": [
@@ -107,7 +107,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026Natur.656..329N/abstract",
       "arxiv_id": "2503.16596",
       "arxiv_url": "https://arxiv.org/abs/2503.16596",
-      "citations": 327
+      "citations": 325
     },
     {
       "year": "2026",
@@ -129,7 +129,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026A%26A...712A..16M/abstract",
       "arxiv_id": "2510.11373",
       "arxiv_url": "https://arxiv.org/abs/2510.11373",
-      "citations": 23
+      "citations": 24
     },
     {
       "year": "2026",
@@ -217,7 +217,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2026MNRAS.547ag401D/abstract",
       "arxiv_id": "2503.11752",
       "arxiv_url": "https://arxiv.org/abs/2503.11752",
-      "citations": 98
+      "citations": 96
     },
     {
       "year": "2026",
@@ -283,7 +283,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025MNRAS.544.3900J/abstract",
       "arxiv_id": "2501.13082",
       "arxiv_url": "https://arxiv.org/abs/2501.13082",
-      "citations": 202
+      "citations": 200
     },
     {
       "year": "2025",
@@ -393,7 +393,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2022A%26A...667L...3L/abstract",
       "arxiv_id": "2208.04930",
       "arxiv_url": "https://arxiv.org/abs/2208.04930",
-      "citations": 62
+      "citations": 61
     },
     {
       "year": "2022",
