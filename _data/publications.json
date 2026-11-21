@@ -2,7 +2,7 @@
   "stats": {
     "papers": 36,
     "first_author": 8,
-    "citations": 2306,
+    "citations": 2307,
     "h_index": 23
   },
   "first_author": [
@@ -294,7 +294,7 @@
       "ads_url": "https://ui.adsabs.harvard.edu/abs/2025A%26A...704A.290C/abstract",
       "arxiv_id": "2507.13160",
       "arxiv_url": "https://arxiv.org/abs/2507.13160",
-      "citations": 35
+      "citations": 36
     },
     {
       "year": "2025",
